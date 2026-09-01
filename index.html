@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#050811">
+  <meta name="theme-color" content="#050811" id="meta-theme-color">
   
   <!-- Primary Meta Tags -->
-  <title>Dionicio Flores Vilches | Perfil Ejecutivo & Gestión Educativa</title>
-  <meta name="title" content="Dionicio Flores Vilches | Perfil Ejecutivo & Gestión Educativa">
-  <meta name="description" content="Directivo y especialista en gestión educacional, liderazgo estratégico, adjudicación de proyectos, sello Liceo Bicentenario y Asesoría Técnico Pedagógica UATP SLEP.">
+  <title>Dionicio Flores Vilches | Perfil Ejecutivo & Liderazgo Educativo</title>
+  <meta name="title" content="Dionicio Flores Vilches | Perfil Ejecutivo & Liderazgo Educativo">
+  <meta name="description" content="Directivo y Asesor Técnico Pedagógico (UATP SLEP Valle Diguillín). Magíster UdeC, Postítulo FCFM U. de Chile. Especialista en Liderazgo Directivo, Liceos Bicentenario, Metodologías Lean e IA.">
   <meta name="author" content="Dionicio Felipe Flores Vilches">
-  <meta name="keywords" content="Dionicio Flores, Gestión Educativa, Liceo Bicentenario, SLEP, UATP, Liderazgo Directivo, Ñuble, Chile, Magíster UdeC, FCFM UChile">
+  <meta name="keywords" content="Dionicio Flores, Gestión Educativa, Liceo Bicentenario, SLEP Valle Diguillin, UATP, Liderazgo Directivo, Ñuble, Chile, Magíster UdeC, FCFM UChile, Lean, IA">
 
-  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <!-- Open Graph / WhatsApp / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://saxneal-png.github.io/cv/">
   <meta property="og:title" content="Dionicio Flores Vilches | Perfil Ejecutivo & Trayectoria">
-  <meta property="og:description" content="Directivo y Asesor Técnico Pedagógico (UATP SLEP Valle Diguillín). Magíster UdeC, Postítulo FCFM U. de Chile. Especialista en Liderazgo, Proyectos y Metodologías Lean.">
+  <meta property="og:description" content="Directivo y Asesor Técnico Pedagógico (UATP SLEP Valle Diguillín). Magíster UdeC, Postítulo FCFM U. de Chile. Especialista en Liderazgo, Proyectos y Modelos de Innovación.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Twitter Card -->
@@ -62,6 +62,10 @@
               600: '#059669',
             },
             surface: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
               800: '#131c2e',
               850: '#0d1525',
               900: '#090e1a',
@@ -75,11 +79,16 @@
           animation: {
             'float-slow': 'float 8s ease-in-out infinite',
             'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'shimmer': 'shimmer 2.5s infinite linear',
           },
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-10px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
             }
           }
         }
@@ -97,40 +106,62 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
-    /* Glassmorphism Cards */
-    .glass-card {
-      background: linear-gradient(135deg, rgba(19, 28, 46, 0.85) 0%, rgba(9, 14, 26, 0.75) 100%);
+    /* Smooth transitions for theme switching */
+    body, header, aside, .glass-card, .theme-transition {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Dark Mode Glassmorphism */
+    .dark .glass-card {
+      background: linear-gradient(135deg, rgba(19, 28, 46, 0.85) 0%, rgba(9, 14, 26, 0.78) 100%);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
     
+    /* Light Mode Corporate Card */
+    html:not(.dark) .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+    }
+
     .glass-card-hover {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @media (hover: hover) and (pointer: fine) {
-      .glass-card-hover:hover {
+      .dark .glass-card-hover:hover {
         transform: translateY(-3px);
         border-color: rgba(54, 167, 247, 0.45);
         box-shadow: 0 20px 40px -10px rgba(12, 141, 233, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.15);
       }
+      html:not(.dark) .glass-card-hover:hover {
+        transform: translateY(-3px);
+        border-color: rgba(3, 88, 161, 0.35);
+        box-shadow: 0 20px 35px -10px rgba(3, 88, 161, 0.12), 0 6px 12px -2px rgba(15, 23, 42, 0.04);
+      }
     }
 
     /* Radial Cursor Spotlight (Desktop only) */
-    .cursor-spotlight {
+    .dark .cursor-spotlight {
       background: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(12, 141, 233, 0.08), transparent 45%);
+    }
+    html:not(.dark) .cursor-spotlight {
+      background: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(3, 88, 161, 0.05), transparent 45%);
     }
 
     /* Scroll reveal animation */
     .reveal-on-scroll {
       opacity: 1;
       transform: translateY(0);
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .js-reveal .reveal-on-scroll {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(22px);
     }
     .js-reveal .reveal-on-scroll.revealed {
       opacity: 1;
@@ -163,9 +194,19 @@
       opacity: 1;
     }
 
-    /* Custom Mobile Scrollbar & Safe-Area Padding */
-    .pb-safe {
-      padding-bottom: env(safe-area-inset-bottom, 1rem);
+    /* Timeline Connecting Line */
+    .timeline-line {
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      left: 1.25rem;
+      width: 2px;
+      background: linear-gradient(to bottom, #10b981 0%, #026fc7 40%, #6366f1 70%, #94a3b8 100%);
+    }
+    @media (min-width: 768px) {
+      .timeline-line {
+        left: 2rem;
+      }
     }
 
     /* Print Architecture - Optimized for US Letter */
@@ -248,71 +289,78 @@
   </style>
 </head>
 
-<body class="bg-surface-950 text-slate-100 font-sans antialiased min-h-screen relative selection:bg-brand-500 selection:text-white pb-24 md:pb-12">
+<body class="bg-surface-950 text-slate-100 dark:bg-surface-950 dark:text-slate-100 font-sans antialiased min-h-screen relative selection:bg-brand-500 selection:text-white pb-24 md:pb-12 transition-colors duration-300">
   
   <!-- Interactive Dynamic Background Layers -->
   <div class="fixed inset-0 cursor-spotlight pointer-events-none z-0 hidden md:block"></div>
-  <canvas id="canvas-network" class="fixed inset-0 pointer-events-none z-0 opacity-40 no-print"></canvas>
+  <canvas id="canvas-network" class="fixed inset-0 pointer-events-none z-0 opacity-40 dark:opacity-40 no-print"></canvas>
   
   <!-- Ambient Gradient Orbs (screen-only) -->
-  <div class="fixed top-1/4 -left-32 w-80 md:w-96 h-80 md:h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none z-0 no-print animate-float-slow"></div>
-  <div class="fixed bottom-1/3 -right-32 w-80 md:w-96 h-80 md:h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none z-0 no-print animate-pulse-slow"></div>
+  <div class="fixed top-1/4 -left-32 w-80 md:w-96 h-80 md:h-96 bg-brand-500/10 dark:bg-brand-500/10 rounded-full blur-3xl pointer-events-none z-0 no-print animate-float-slow"></div>
+  <div class="fixed bottom-1/3 -right-32 w-80 md:w-96 h-80 md:h-96 bg-accent-500/10 dark:bg-accent-500/10 rounded-full blur-3xl pointer-events-none z-0 no-print animate-pulse-slow"></div>
 
   <!-- Top Sticky Navigation Bar -->
-  <header class="sticky top-0 z-40 glass-card border-b border-slate-800/80 transition-all duration-300 no-print">
+  <header class="sticky top-0 z-40 glass-card border-b border-slate-800/80 dark:border-slate-800/80 transition-all duration-300 no-print">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <!-- Brand & Executive Badge -->
+      <!-- Brand & Executive Avatar / Monogram -->
       <a href="#perfil" class="flex items-center space-x-2.5 sm:space-x-3 group">
         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-500 to-indigo-600 flex items-center justify-center font-black text-white shadow-lg shadow-brand-500/25 text-sm sm:text-base tracking-wider group-hover:scale-105 transition-transform flex-shrink-0">
           DF
         </div>
         <div class="min-w-0">
           <div class="flex items-center gap-1.5">
-            <h1 class="text-xs sm:text-base font-bold text-slate-100 tracking-tight leading-tight group-hover:text-brand-300 transition-colors truncate">
+            <h1 class="text-xs sm:text-base font-bold text-slate-900 dark:text-slate-100 tracking-tight leading-tight group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors truncate">
               Dionicio Flores Vilches
             </h1>
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse flex-shrink-0" title="Disponible para asesorías y desafíos directivos"></span>
           </div>
-          <p class="text-[10px] sm:text-[11px] text-brand-300 font-medium font-mono truncate">Gestión Estratégica & Liderazgo</p>
+          <p class="text-[10px] sm:text-[11px] text-brand-600 dark:text-brand-300 font-medium font-mono truncate">Gestión Estratégica & Liderazgo</p>
         </div>
       </a>
 
       <!-- Desktop Navigation Jump Links -->
-      <nav class="hidden lg:flex items-center space-x-1 text-xs font-semibold text-slate-300">
-        <a href="#perfil" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/70 transition-all">Perfil</a>
-        <a href="#habilidades" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/70 transition-all">Competencias</a>
-        <a href="#experiencia" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/70 transition-all">Trayectoria</a>
-        <a href="#credenciales" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/70 transition-all">Credenciales</a>
-        <a href="#asistente" class="px-3 py-1.5 rounded-lg text-brand-300 hover:text-white bg-brand-950/80 border border-brand-700/50 hover:bg-brand-900/80 transition-all flex items-center gap-1.5">
-          <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-400"></i> Enfoque
+      <nav class="hidden lg:flex items-center space-x-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#perfil" class="px-3 py-1.5 rounded-lg hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all">Perfil</a>
+        <a href="#declaracion" class="px-3 py-1.5 rounded-lg hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all">Manifiesto</a>
+        <a href="#habilidades" class="px-3 py-1.5 rounded-lg hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all">Competencias</a>
+        <a href="#experiencia" class="px-3 py-1.5 rounded-lg hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all">Trayectoria</a>
+        <a href="#credenciales" class="px-3 py-1.5 rounded-lg hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all">Credenciales</a>
+        <a href="#asistente" class="px-3 py-1.5 rounded-lg text-brand-700 dark:text-brand-300 hover:text-brand-800 dark:hover:text-white bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-700/50 hover:bg-brand-100 dark:hover:bg-brand-900/80 transition-all flex items-center gap-1.5">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-500 dark:text-brand-400"></i> Enfoque
         </a>
       </nav>
 
       <!-- Action Panel Buttons -->
       <div class="flex items-center space-x-1.5 sm:space-x-2">
         
+        <!-- Theme Toggle (Dark / Light) -->
+        <button onclick="toggleTheme()" id="btn-theme" title="Alternar Modo Claro / Oscuro" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-all">
+          <i data-lucide="sun" id="theme-icon-sun" class="w-4 h-4 hidden dark:block text-amber-300"></i>
+          <i data-lucide="moon" id="theme-icon-moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+        </button>
+
         <!-- Share / QR Button -->
-        <button onclick="openQRModal()" title="Compartir CV con QR o Enlace" class="p-2 sm:px-2.5 sm:py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all flex items-center gap-1">
-          <i data-lucide="qr-code" class="w-4 h-4 text-brand-400"></i>
+        <button onclick="openQRModal()" title="Compartir CV con QR o Enlace" class="p-2 sm:px-2.5 sm:py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-all flex items-center gap-1">
+          <i data-lucide="qr-code" class="w-4 h-4 text-brand-600 dark:text-brand-400"></i>
           <span class="hidden xl:inline text-xs font-semibold">Compartir</span>
         </button>
 
         <!-- Audio Toggle (Desktop & Tablet) -->
-        <button onclick="toggleAudioFeedback()" id="btn-sound" title="Alternar audio háptico" class="hidden sm:inline-flex p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all">
+        <button onclick="toggleAudioFeedback()" id="btn-sound" title="Alternar audio háptico" class="hidden sm:inline-flex p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-all">
           <i data-lucide="volume-2" id="sound-icon" class="w-4 h-4"></i>
         </button>
 
         <!-- PDF Generator Button -->
         <button onclick="generateVectorPDF()" id="btn-pdf" title="Descargar PDF formato Carta" class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 rounded-xl bg-gradient-to-r from-brand-700 to-indigo-700 hover:from-brand-600 hover:to-indigo-600 text-white text-xs font-semibold border border-brand-500/40 transition-all shadow-sm active:scale-95">
-          <i data-lucide="file-down" class="w-3.5 h-3.5 text-brand-300"></i>
+          <i data-lucide="file-down" class="w-3.5 h-3.5 text-brand-200"></i>
           <span class="hidden sm:inline">PDF Ejecutivo</span>
           <span class="sm:hidden text-[11px]">PDF</span>
         </button>
 
         <!-- Save vCard Contact (Mobile & Desktop) -->
-        <button onclick="downloadVCard()" title="Guardar contacto en tu teléfono (.vcf)" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-all shadow-sm">
-          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <button onclick="downloadVCard()" title="Guardar contacto en tu teléfono (.vcf)" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold border border-slate-200 dark:border-slate-700 transition-all shadow-sm">
+          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
           <span>vCard</span>
         </button>
 
@@ -325,11 +373,11 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10 space-y-10 sm:space-y-12">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10 space-y-10 sm:space-y-14">
     
     <!-- Hero Header / Executive Overview -->
     <section id="perfil" class="reveal-on-scroll">
-      <div class="glass-card rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-800 relative overflow-hidden print-header">
+      <div class="glass-card rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200 dark:border-slate-800 relative overflow-hidden print-header">
         
         <!-- Glow accents for screen -->
         <div class="absolute -right-20 -bottom-20 w-80 md:w-96 h-80 md:h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none no-print"></div>
@@ -340,54 +388,54 @@
           <div class="lg:col-span-8 space-y-4 sm:space-y-5">
             <!-- Pill Badges -->
             <div class="flex flex-wrap items-center gap-2">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 print-badge">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping no-print"></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 print-badge">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-ping no-print"></span>
                 Asesor Técnico Pedagógico (UATP SLEP Valle Diguillín)
               </span>
-              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/80 print-badge">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400 no-print"></i> Ñuble, Chile
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/80 print-badge">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 no-print"></i> Ñuble, Chile
               </span>
-              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 print-badge">
-                <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-400 no-print"></i> Magíster UdeC • Postítulo FCFM U. de Chile
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 print-badge">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400 no-print"></i> Magíster UdeC • Postítulo FCFM U. de Chile
               </span>
             </div>
 
             <!-- Main Titles -->
             <div>
-              <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight print-title">
+              <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight print-title">
                 Dionicio Felipe Flores Vilches
               </h2>
-              <p class="text-sm sm:text-lg lg:text-xl font-semibold bg-gradient-to-r from-brand-300 via-blue-100 to-indigo-300 bg-clip-text text-transparent mt-1.5 print-subtitle">
+              <p class="text-sm sm:text-lg lg:text-xl font-semibold bg-gradient-to-r from-brand-700 via-blue-600 to-indigo-600 dark:from-brand-300 dark:via-blue-100 dark:to-indigo-300 bg-clip-text text-transparent mt-1.5 print-subtitle">
                 Gestión Educativa Estratégica • Liderazgo Directivo • Acompañamiento Técnico & Modelos de Innovación
               </p>
             </div>
 
             <!-- Profile Summary -->
-            <p class="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl">
-              Directivo y especialista en políticas y gestión educacional con sólida experiencia en conducción de establecimientos de Enseñanza Media, adjudicación de proyectos de inversión y obtención del sello de <strong class="text-white">Liceo Bicentenario de Excelencia</strong>. Actualmente enfocado en asesoría técnico-pedagógica territorial en el Sistema de Educación Pública (SLEP), optimización de flujos de trabajo organizacional mediante metodologías <strong class="text-brand-300">Lean</strong>, control de gestión e integración estratégica de <strong class="text-indigo-300">Inteligencia Artificial</strong> y entornos formativos modernos.
+            <p class="text-slate-700 dark:text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl">
+              Directivo y especialista en políticas y gestión educacional con sólida experiencia en conducción de establecimientos de Enseñanza Media, adjudicación de proyectos de inversión y obtención del sello de <strong class="text-slate-900 dark:text-white">Liceo Bicentenario de Excelencia</strong>. Actualmente enfocado en asesoría técnico-pedagógica territorial en el Sistema de Educación Pública (SLEP), optimización de flujos de trabajo organizacional mediante metodologías <strong class="text-brand-700 dark:text-brand-300 font-semibold">Lean</strong>, control de gestión e integración estratégica de <strong class="text-indigo-700 dark:text-indigo-300 font-semibold">Inteligencia Artificial</strong> y entornos formativos modernos.
             </p>
 
             <!-- Quick Action & Contact Row -->
             <div class="flex flex-wrap items-center gap-2 pt-2 no-print">
-              <button onclick="copyToClipboard('+56965143133', 'Teléfono copiado al portapapeles')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700/80 transition-all active:scale-95 shadow-sm">
-                <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-400"></i>
+              <button onclick="copyToClipboard('+56965143133', 'Teléfono copiado al portapapeles')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 transition-all active:scale-95 shadow-sm">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i>
                 <span>+56 9 6514 3133</span>
                 <i data-lucide="copy" class="w-3 h-3 opacity-50 ml-0.5"></i>
               </button>
 
-              <button onclick="copyToClipboard('saxneal@hotmail.com', 'Correo copiado al portapapeles')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700/80 transition-all active:scale-95 shadow-sm">
-                <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
+              <button onclick="copyToClipboard('saxneal@hotmail.com', 'Correo copiado al portapapeles')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 transition-all active:scale-95 shadow-sm">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400"></i>
                 <span>saxneal@hotmail.com</span>
                 <i data-lucide="copy" class="w-3 h-3 opacity-50 ml-0.5"></i>
               </button>
 
-              <a href="https://wa.me/56965143133?text=Estimado%20Dionicio,%20un%20gusto%20saludarte.%20Quisi%C3%A9ramos%20conversar%20sobre%20tu%20perfil%20profesional." target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/90 text-xs font-semibold text-emerald-300 border border-emerald-700/70 transition-all active:scale-95">
-                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <a href="https://wa.me/56965143133?text=Estimado%20Dionicio,%20un%20gusto%20saludarte.%20Quisi%C3%A9ramos%20conversar%20sobre%20tu%20perfil%20profesional." target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 text-xs font-semibold text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/70 transition-all active:scale-95">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
                 <span>WhatsApp Directo</span>
               </a>
 
-              <button onclick="downloadVCard()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700/80 transition-all active:scale-95 md:hidden">
-                <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <button onclick="downloadVCard()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 transition-all active:scale-95 md:hidden">
+                <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
                 <span>Guardar Contacto</span>
               </button>
             </div>
@@ -398,26 +446,28 @@
             </div>
           </div>
 
-          <!-- Impact Metrics Display -->
-          <div class="lg:col-span-4 grid grid-cols-2 gap-2.5 sm:gap-3.5">
-            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
-              <div class="text-xl sm:text-3xl font-black text-brand-400 font-mono tracking-tight group-hover:scale-105 transition-transform">+14 Años</div>
-              <div class="text-[10px] sm:text-xs text-slate-400 font-medium mt-1 leading-snug">Trayectoria Educativa & Directiva</div>
+          <!-- Impact Metrics Dashboard with Animated Counters -->
+          <div class="lg:col-span-4 grid grid-cols-2 gap-2.5 sm:gap-3.5" id="stats-counter-section">
+            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
+              <div class="text-xl sm:text-3xl font-black text-brand-600 dark:text-brand-400 font-mono tracking-tight group-hover:scale-105 transition-transform">
+                +<span class="counter" data-target="14">0</span> Años
+              </div>
+              <div class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 leading-snug">Trayectoria Directiva</div>
             </div>
             
-            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
-              <div class="text-base sm:text-xl lg:text-2xl font-black text-indigo-400 font-sans tracking-tight group-hover:scale-105 transition-transform uppercase">Magíster</div>
-              <div class="text-[10px] sm:text-xs text-slate-400 font-medium mt-1 leading-snug">Gestión & Liderazgo (UdeC)</div>
+            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
+              <div class="text-base sm:text-xl lg:text-2xl font-black text-indigo-600 dark:text-indigo-400 font-sans tracking-tight group-hover:scale-105 transition-transform uppercase">Magíster</div>
+              <div class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 leading-snug">Gestión & Liderazgo (UdeC)</div>
             </div>
             
-            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
-              <div class="text-sm sm:text-lg lg:text-xl font-black text-emerald-400 font-sans tracking-tight group-hover:scale-105 transition-transform">Bicentenario</div>
-              <div class="text-[10px] sm:text-xs text-slate-400 font-medium mt-1 leading-snug">Sello de Excelencia Obtenido</div>
+            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
+              <div class="text-sm sm:text-lg lg:text-xl font-black text-emerald-600 dark:text-emerald-400 font-sans tracking-tight group-hover:scale-105 transition-transform">Bicentenario</div>
+              <div class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 leading-snug">Sello de Excelencia Obtenido</div>
             </div>
             
-            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
-              <div class="text-base sm:text-xl lg:text-2xl font-black text-blue-400 font-mono tracking-tight group-hover:scale-105 transition-transform">UATP SLEP</div>
-              <div class="text-[10px] sm:text-xs text-slate-400 font-medium mt-1 leading-snug">Asesoría Técnico Pedagógica</div>
+            <div class="glass-card p-3.5 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center glass-card-hover group flex flex-col justify-center">
+              <div class="text-base sm:text-xl lg:text-2xl font-black text-blue-600 dark:text-blue-400 font-mono tracking-tight group-hover:scale-105 transition-transform">UATP SLEP</div>
+              <div class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 leading-snug">Asesoría Técnico Pedagógica</div>
             </div>
           </div>
 
@@ -425,17 +475,36 @@
       </div>
     </section>
 
+    <!-- Executive Leadership Statement / Manifiesto -->
+    <section id="declaracion" class="reveal-on-scroll">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 bg-gradient-to-r from-brand-900/10 via-indigo-900/10 to-emerald-900/10 dark:from-brand-950/40 dark:via-surface-900/60 dark:to-surface-950/80 relative overflow-hidden">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-brand-500/10 dark:bg-brand-500/20 text-brand-600 dark:text-brand-400 flex items-center justify-center flex-shrink-0 mt-1">
+            <i data-lucide="quote" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono text-brand-600 dark:text-brand-300">
+              Propuesta de Valor & Enfoque de Gestión
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+              "El liderazgo educativo moderno exige conjugar una alta sensibilidad humana y comunitaria con un riguroso control de gestión basado en datos, metodologías ágiles y tecnologías de vanguardia. Mi compromiso radica en transformar las organizaciones escolares en entornos de excelencia, pertinencia y bienestar integral."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Matriz de Competencias -->
     <section id="habilidades" class="space-y-4 reveal-on-scroll">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
-          <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 print-section-title">
-            <i data-lucide="layers" class="w-5 h-5 text-brand-400 no-print"></i>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2 print-section-title">
+            <i data-lucide="layers" class="w-5 h-5 text-brand-600 dark:text-brand-400 no-print"></i>
             Matriz de Competencias & Habilidades Ejecutivas
           </h3>
-          <p class="text-xs text-slate-400 no-print">Capacidades directivas y técnicas aplicadas al desarrollo organizacional y pedagógico</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 no-print">Capacidades directivas y técnicas aplicadas al desarrollo organizacional y pedagógico</p>
         </div>
-        <span class="text-[11px] sm:text-xs font-mono text-brand-300 bg-brand-950/80 border border-brand-700/60 px-3 py-1 rounded-full self-start sm:self-auto no-print">
+        <span class="text-[11px] sm:text-xs font-mono text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-700/60 px-3 py-1 rounded-full self-start sm:self-auto no-print">
           Gestión Estratégica + Metodologías Ágiles
         </span>
       </div>
@@ -443,180 +512,189 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
         
         <!-- Skill Block 1 -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 mb-3 no-print">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-3 no-print">
               <i data-lucide="compass" class="w-4 h-4 sm:w-5 sm:h-5"></i>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Liderazgo & Gestión Institucional</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-1.5">Liderazgo & Gestión Institucional</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Conducción estratégica de comunidades escolares, gestión del cambio, gobernanza participativa, articulación de PME/PEI y desarrollo de culturas de alta expectativa y bienestar.
             </p>
           </div>
-          <div class="mt-4 pt-2.5 border-t border-slate-800/60 flex flex-wrap gap-1">
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Dirección Escolar</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Gobernanza PME</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Clima & Retención</span>
+          <div class="mt-4 pt-2.5 border-t border-slate-200 dark:border-slate-800/60 flex flex-wrap gap-1">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Dirección Escolar</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Gobernanza PME</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Clima & Retención</span>
           </div>
         </div>
 
         <!-- Skill Block 2 -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-3 no-print">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-3 no-print">
               <i data-lucide="cpu" class="w-4 h-4 sm:w-5 sm:h-5"></i>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Lean Operations & Control de Gestión</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-1.5">Lean Operations & Control de Gestión</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Optimización de flujos y procesos técnico-pedagógicos, reducción de tiempos burocráticos, diseño de tableros de indicadores (KPIs) y modelamiento de mejora continua.
             </p>
           </div>
-          <div class="mt-4 pt-2.5 border-t border-slate-800/60 flex flex-wrap gap-1">
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Lean Operations</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Control de Gestión</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Planificación Estratégica</span>
+          <div class="mt-4 pt-2.5 border-t border-slate-200 dark:border-slate-800/60 flex flex-wrap gap-1">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Lean Operations</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Control de Gestión</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Planificación Estratégica</span>
           </div>
         </div>
 
         <!-- Skill Block 3 -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3 no-print">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-3 no-print">
               <i data-lucide="users" class="w-4 h-4 sm:w-5 sm:h-5"></i>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Acompañamiento Técnico & UTP</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-1.5">Acompañamiento Técnico & UTP</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Asesoría territorial a directivos y UTPs en el Sistema SLEP, diseño de comunidades de aprendizaje profesional entre pares, alineación curricular y evaluación formativa (Dec. 67).
             </p>
           </div>
-          <div class="mt-4 pt-2.5 border-t border-slate-800/60 flex flex-wrap gap-1">
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Acompañamiento UATP</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Trabajo Entre Pares</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Decreto 67</span>
+          <div class="mt-4 pt-2.5 border-t border-slate-200 dark:border-slate-800/60 flex flex-wrap gap-1">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Acompañamiento UATP</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Trabajo Entre Pares</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Decreto 67</span>
           </div>
         </div>
 
         <!-- Skill Block 4 -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-3 no-print">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-3 no-print">
               <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Educación TP, Proyectos & IA</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-1.5">Educación TP, Proyectos & IA</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Formulación y adjudicación de proyectos de inversión y equipamiento EMTP, vinculación con el sector productivo, apertura de nuevas especialidades e integración de IA aplicada.
             </p>
           </div>
-          <div class="mt-4 pt-2.5 border-t border-slate-800/60 flex flex-wrap gap-1">
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Proyectos EMTP</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Especialidades TP</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">IA en Educación</span>
+          <div class="mt-4 pt-2.5 border-t border-slate-200 dark:border-slate-800/60 flex flex-wrap gap-1">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Proyectos EMTP</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Especialidades TP</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IA en Educación</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Trayectoria Profesional -->
+    <!-- Trayectoria Profesional (Timeline & Live Search) -->
     <section id="experiencia" class="space-y-5 sm:space-y-6 reveal-on-scroll">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
-          <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 print-section-title">
-            <i data-lucide="briefcase" class="w-5 h-5 text-brand-400 no-print"></i>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2 print-section-title">
+            <i data-lucide="briefcase" class="w-5 h-5 text-brand-600 dark:text-brand-400 no-print"></i>
             Trayectoria Directiva & Experiencia Profesional
           </h3>
-          <p class="text-xs text-slate-400 no-print">Gestión pública verificable, dirección de establecimientos y liderazgo técnico-pedagógico</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 no-print">Gestión pública verificable, dirección de establecimientos y liderazgo técnico-pedagógico</p>
         </div>
 
-        <!-- Filter Controls (Screen only) -->
-        <div class="flex flex-wrap items-center gap-1.5 no-print overflow-x-auto pb-1">
-          <button onclick="filterExperience('all')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-brand-600 text-white transition-all shadow-sm flex-shrink-0" data-filter="all">Todos</button>
-          <button onclick="filterExperience('slep')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex-shrink-0" data-filter="slep">SLEP / UATP</button>
-          <button onclick="filterExperience('direccion')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex-shrink-0" data-filter="direccion">Dirección</button>
-          <button onclick="filterExperience('utp')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex-shrink-0" data-filter="utp">Jefatura UTP</button>
+        <!-- Real-time Live Search Input -->
+        <div class="flex items-center gap-2 no-print">
+          <div class="relative w-full sm:w-64">
+            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="live-search-input" onkeyup="liveSearchExperience()" placeholder="Buscar hito, SLEP, PME..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:border-brand-500 transition-all">
+          </div>
         </div>
       </div>
 
+      <!-- Filter Categories Buttons -->
+      <div class="flex flex-wrap items-center gap-1.5 no-print overflow-x-auto pb-1">
+        <button onclick="filterExperience('all')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-brand-600 text-white transition-all shadow-sm flex-shrink-0" data-filter="all">Todos</button>
+        <button onclick="filterExperience('slep')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all flex-shrink-0" data-filter="slep">SLEP / UATP</button>
+        <button onclick="filterExperience('direccion')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all flex-shrink-0" data-filter="direccion">Dirección</button>
+        <button onclick="filterExperience('utp')" class="filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all flex-shrink-0" data-filter="utp">Jefatura UTP</button>
+      </div>
+
+      <!-- Experience Cards Container -->
       <div class="space-y-4" id="experience-container">
         
         <!-- Job 1: SLEP Valle Diguillín -->
-        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-emerald-500 border-slate-800 glass-card-hover" data-category="slep">
+        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-emerald-500 border-slate-200 dark:border-slate-800 glass-card-hover" data-category="slep">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <h4 class="text-sm sm:text-lg font-bold text-white">Asesor Técnico Pedagógico – UATP</h4>
-                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 print-badge">Cargo Actual</span>
+                <h4 class="text-sm sm:text-lg font-bold text-slate-900 dark:text-white">Asesor Técnico Pedagógico – UATP</h4>
+                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 print-badge">Cargo Actual</span>
               </div>
-              <p class="text-xs sm:text-sm font-semibold text-brand-300">Servicio Local de Educación Pública (SLEP) Valle Diguillín</p>
+              <p class="text-xs sm:text-sm font-semibold text-brand-600 dark:text-brand-300">Servicio Local de Educación Pública (SLEP) Valle Diguillín</p>
             </div>
-            <div class="text-xs font-mono text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
               <i data-lucide="calendar" class="w-3.5 h-3.5 no-print"></i> Enero 2026 – Presente
             </div>
           </div>
           
-          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed list-disc list-inside">
+          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed list-disc list-inside">
             <li>Liderazgo en el acompañamiento y asesoría técnico-pedagógica a directivos y equipos UTP de la red escolar territorial.</li>
-            <li>Monitoreo, seguimiento y alineación estratégica de los <strong class="text-white">Planes de Mejoramiento Educativo (PME)</strong> bajo los estándares de la Nueva Educación Pública.</li>
+            <li>Monitoreo, seguimiento y alineación estratégica de los <strong class="text-slate-900 dark:text-white">Planes de Mejoramiento Educativo (PME)</strong> bajo los estándares de la Nueva Educación Pública.</li>
             <li>Articulación de comunidades de aprendizaje profesional entre pares y optimización de prácticas evaluativas y de cobertura curricular.</li>
           </ul>
         </div>
 
         <!-- Job 2: Director Víctor Jara -->
-        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-brand-500 border-slate-800 glass-card-hover" data-category="direccion">
+        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-brand-500 border-slate-200 dark:border-slate-800 glass-card-hover" data-category="direccion">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">
             <div>
               <div class="flex flex-wrap items-center gap-2">
-                <h4 class="text-sm sm:text-lg font-bold text-white">Director</h4>
-                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30 print-badge">Hito Bicentenario</span>
+                <h4 class="text-sm sm:text-lg font-bold text-slate-900 dark:text-white">Director</h4>
+                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-500/20 text-brand-700 dark:text-brand-300 border border-brand-500/30 print-badge">Hito Bicentenario</span>
               </div>
-              <p class="text-xs sm:text-sm font-semibold text-brand-300">Colegio Bicentenario de Excelencia Politécnico Víctor Jara, San Ignacio</p>
+              <p class="text-xs sm:text-sm font-semibold text-brand-600 dark:text-brand-300">Colegio Bicentenario de Excelencia Politécnico Víctor Jara, San Ignacio</p>
             </div>
-            <div class="text-xs font-mono text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
               <i data-lucide="calendar" class="w-3.5 h-3.5 no-print"></i> 2023 – Diciembre 2025
             </div>
           </div>
           
-          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed list-disc list-inside">
-            <li>Conducción institucional y obtención del reconocimiento como <strong class="text-white">Liceo Bicentenario de Excelencia</strong> (Convocatoria 2023).</li>
+          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed list-disc list-inside">
+            <li>Conducción institucional y obtención del reconocimiento como <strong class="text-slate-900 dark:text-white">Liceo Bicentenario de Excelencia</strong> (Convocatoria 2023).</li>
             <li>Formulación y adjudicación de proyectos integrales de conservación de infraestructura y modernización de equipamiento técnico-profesional.</li>
-            <li>Implementación del modelo innovador de <strong class="text-white">codocencia con artistas mediadores</strong> para el desarrollo transversal de objetivos de aprendizaje.</li>
+            <li>Implementación del modelo innovador de <strong class="text-slate-900 dark:text-white">codocencia con artistas mediadores</strong> para el desarrollo transversal de objetivos de aprendizaje.</li>
             <li>Fortalecimiento del clima organizacional, retención estudiantil e incremento sostenido en indicadores de logro.</li>
           </ul>
         </div>
 
         <!-- Job 3: Jefe UTP Pueblo Seco -->
-        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-indigo-500 border-slate-800 glass-card-hover" data-category="utp">
+        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-indigo-500 border-slate-200 dark:border-slate-800 glass-card-hover" data-category="utp">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">
             <div>
-              <h4 class="text-sm sm:text-lg font-bold text-white">Jefe de Unidad Técnico Pedagógica (UTP)</h4>
-              <p class="text-xs sm:text-sm font-semibold text-indigo-300">Liceo Bicentenario Pueblo Seco, San Ignacio</p>
+              <h4 class="text-sm sm:text-lg font-bold text-slate-900 dark:text-white">Jefe de Unidad Técnico Pedagógica (UTP)</h4>
+              <p class="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-300">Liceo Bicentenario Pueblo Seco, San Ignacio</p>
             </div>
-            <div class="text-xs font-mono text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
               <i data-lucide="calendar" class="w-3.5 h-3.5 no-print"></i> 2018 – 2022
             </div>
           </div>
           
-          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed list-disc list-inside">
-            <li>Liderazgo en el proceso de ajuste y alineamiento curricular interno y obtención de la <strong class="text-white">Certificación Ambiental (SNCAE) en Nivel de Excelencia</strong>.</li>
+          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed list-disc list-inside">
+            <li>Liderazgo en el proceso de ajuste y alineamiento curricular interno y obtención de la <strong class="text-slate-900 dark:text-white">Certificación Ambiental (SNCAE) en Nivel de Excelencia</strong>.</li>
             <li>Reestructuración integral del Proyecto JEC orientándolo al bienestar socioemocional, artes y deportes.</li>
-            <li>Liderazgo técnico en el diseño, pertinencia y <strong class="text-white">apertura de una nueva carrera técnico-profesional</strong>, junto con la adjudicación de fondos para su equipamiento.</li>
+            <li>Liderazgo técnico en el diseño, pertinencia y <strong class="text-slate-900 dark:text-white">apertura de una nueva carrera técnico-profesional</strong>, junto con la adjudicación de fondos para su equipamiento.</li>
             <li>Gestión y saneamiento técnico de la regularización de infraestructura escolar ante organismos normativos.</li>
           </ul>
         </div>
 
         <!-- Job 4: Jefe UTP Manuel Jesús Ortiz -->
-        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-blue-500 border-slate-800 glass-card-hover" data-category="utp">
+        <div class="exp-card glass-card p-5 sm:p-6 rounded-2xl border-l-4 border-l-blue-500 border-slate-200 dark:border-slate-800 glass-card-hover" data-category="utp">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">
             <div>
-              <h4 class="text-sm sm:text-lg font-bold text-white">Jefe de Unidad Técnico Pedagógica (Enseñanza Media)</h4>
-              <p class="text-xs sm:text-sm font-semibold text-blue-300">Liceo Manuel Jesús Ortiz, San Ignacio</p>
+              <h4 class="text-sm sm:text-lg font-bold text-slate-900 dark:text-white">Jefe de Unidad Técnico Pedagógica (Enseñanza Media)</h4>
+              <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-300">Liceo Manuel Jesús Ortiz, San Ignacio</p>
             </div>
-            <div class="text-xs font-mono text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1 sm:mt-0">
               <i data-lucide="calendar" class="w-3.5 h-3.5 no-print"></i> 2015 – 2017
             </div>
           </div>
           
-          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed list-disc list-inside">
+          <ul class="mt-3 space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed list-disc list-inside">
             <li>Coordinación general del programa PACE y adjudicación de proyectos participativos institucionales.</li>
             <li>Conducción del proceso de Certificación Ambiental en Nivel de Excelencia.</li>
             <li>Establecimiento de convenios estratégicos con instituciones de educación superior y preuniversitarios.</li>
@@ -628,129 +706,129 @@
 
     <!-- Formación y Credenciales -->
     <section id="credenciales" class="space-y-5 sm:space-y-6 reveal-on-scroll">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
-          <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 print-section-title">
-            <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-400 no-print"></i>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2 print-section-title">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-600 dark:text-indigo-400 no-print"></i>
             Grados Académicos & Certificaciones de Postgrado
           </h3>
-          <p class="text-xs text-slate-400 no-print">Formación universitaria avanzada y especializaciones en gestión estratégica</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 no-print">Formación universitaria avanzada y especializaciones en gestión estratégica</p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
         
         <!-- Degree: Magíster UdeC -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-800/60 print-badge">Grado Académico</span>
-                <h4 class="text-sm sm:text-base font-bold text-white">Magíster en Gestión, Liderazgo y Políticas Educativas</h4>
-                <p class="text-xs text-slate-300 font-medium">Universidad de Concepción (UdeC) • Concepción</p>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-200 dark:border-indigo-800/60 print-badge">Grado Académico</span>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Magíster en Gestión, Liderazgo y Políticas Educativas</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">Universidad de Concepción (UdeC) • Concepción</p>
               </div>
-              <div class="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0 no-print">
+              <div class="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 flex-shrink-0 no-print">
                 <i data-lucide="award" class="w-4 h-4"></i>
               </div>
             </div>
-            <p class="text-xs text-slate-400 mt-2.5">Graduación: 2017 | Especialización previa de Postgrado en Liderazgo y Políticas Educativas (2015-2016).</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5">Graduación: 2017 | Especialización previa de Postgrado en Liderazgo y Políticas Educativas (2015-2016).</p>
           </div>
-          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-800 text-xs">
-            <span class="font-mono text-[11px] text-slate-400">Certificado de Grado</span>
-            <a href="https://drive.google.com/file/d/1rz2ZnRTK-skFjNyWzFUSqbrv9UWPiMu-/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 font-semibold no-print py-1">
+          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">Certificado de Grado</span>
+            <a href="https://drive.google.com/file/d/1rz2ZnRTK-skFjNyWzFUSqbrv9UWPiMu-/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 font-semibold no-print py-1">
               <span>Ver Certificado</span> <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
         </div>
 
         <!-- Degree: Título UBB -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-brand-400 bg-brand-950/60 px-2 py-0.5 rounded border border-brand-800/60 print-badge">Título de Pregrado</span>
-                <h4 class="text-sm sm:text-base font-bold text-white">Profesor de Ed. Media en Castellano y Comunicación</h4>
-                <p class="text-xs text-slate-300 font-medium">Universidad del Bío-Bío (UBB) • Chillán</p>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/60 px-2 py-0.5 rounded border border-brand-200 dark:border-brand-800/60 print-badge">Título de Pregrado</span>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Profesor de Ed. Media en Castellano y Comunicación</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">Universidad del Bío-Bío (UBB) • Chillán</p>
               </div>
-              <div class="w-8 h-8 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-400 flex-shrink-0 no-print">
+              <div class="w-8 h-8 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-600 dark:text-brand-400 flex-shrink-0 no-print">
                 <i data-lucide="book-open" class="w-4 h-4"></i>
               </div>
             </div>
-            <p class="text-xs text-slate-400 mt-2.5">Licenciado en Educación en Lengua Castellana y Comunicación (2010).</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5">Licenciado en Educación en Lengua Castellana y Comunicación (2010).</p>
           </div>
-          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-800 text-xs">
-            <span class="font-mono text-[11px] text-slate-400">Certificado de Título</span>
-            <a href="https://drive.google.com/file/d/1IewH8W95VzqqW0TdTnzYItXKg68Wocwu/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-brand-400 hover:text-brand-300 font-semibold no-print py-1">
+          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">Certificado de Título</span>
+            <a href="https://drive.google.com/file/d/1IewH8W95VzqqW0TdTnzYItXKg68Wocwu/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-brand-600 dark:text-brand-400 hover:text-brand-500 font-semibold no-print py-1">
               <span>Ver Certificado</span> <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 2: Estrategia Organizacional UChile -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 glass-card-hover flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-1.5">
-                  <span class="text-[10px] font-bold text-brand-300 bg-brand-950/80 px-2 py-0.5 rounded border border-brand-700/60 print-badge">FCFM U. de Chile</span>
-                  <span class="text-[10px] font-bold text-slate-300 bg-slate-800 px-2 py-0.5 rounded print-badge">54 Horas</span>
+                  <span class="text-[10px] font-bold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/80 px-2 py-0.5 rounded border border-brand-200 dark:border-brand-700/60 print-badge">FCFM U. de Chile</span>
+                  <span class="text-[10px] font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded print-badge">54 Horas</span>
                 </div>
-                <h4 class="text-sm sm:text-base font-bold text-white">Introducción a la Estrategia en el Desarrollo de Organizaciones</h4>
-                <p class="text-xs text-brand-300 font-medium">Escuela de Postgrado y Educación Continua, FCFM – Universidad de Chile</p>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Introducción a la Estrategia en el Desarrollo de Organizaciones</h4>
+                <p class="text-xs text-brand-700 dark:text-brand-300 font-medium">Escuela de Postgrado y Educación Continua, FCFM – Universidad de Chile</p>
               </div>
-              <div class="w-8 h-8 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400 flex-shrink-0 no-print">
+              <div class="w-8 h-8 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-600 dark:text-brand-400 flex-shrink-0 no-print">
                 <i data-lucide="check-circle" class="w-4 h-4"></i>
               </div>
             </div>
-            <p class="text-xs text-slate-400 mt-2.5">Especialización en modelamiento estratégico, alineación institucional y metodologías Lean Operations.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5">Especialización en modelamiento estratégico, alineación institucional y metodologías Lean Operations.</p>
           </div>
-          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-800 text-xs">
-            <span class="font-mono text-[11px] text-slate-400">Certificación Oficial FCFM</span>
-            <a href="https://app.fcfmonline.cl/certificates/dc10d7d2be16458a93a9d4b9c8729b35" target="_blank" class="inline-flex items-center gap-1 text-brand-400 hover:text-brand-300 font-semibold no-print py-1">
+          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">Certificación Oficial FCFM</span>
+            <a href="https://app.fcfmonline.cl/certificates/dc10d7d2be16458a93a9d4b9c8729b35" target="_blank" class="inline-flex items-center gap-1 text-brand-600 dark:text-brand-400 hover:text-brand-500 font-semibold no-print py-1">
               <span>Verificar en Línea</span> <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 3: Diplomado en Curso -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-indigo-800/60 bg-indigo-950/20 glass-card-hover flex flex-col justify-between">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-indigo-200 dark:border-indigo-800/60 bg-indigo-50/50 dark:bg-indigo-950/20 glass-card-hover flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-900/60 px-2 py-0.5 rounded border border-indigo-700/60 print-badge">En Curso (2026)</span>
-                <h4 class="text-sm sm:text-base font-bold text-white">Diplomado en Principios de la Planificación, Control y Gestión</h4>
-                <p class="text-xs text-indigo-300 font-medium">Especialización en Modelamiento Estratégico y Control de Gestión</p>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/60 px-2 py-0.5 rounded border border-indigo-300 dark:border-indigo-700/60 print-badge">En Curso (2026)</span>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Diplomado en Principios de la Planificación, Control y Gestión</h4>
+                <p class="text-xs text-indigo-700 dark:text-indigo-300 font-medium">Especialización en Modelamiento Estratégico y Control de Gestión</p>
               </div>
-              <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0 no-print">
+              <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 flex-shrink-0 no-print">
                 <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>
               </div>
             </div>
-            <p class="text-xs text-slate-400 mt-2.5">Diseño de indicadores clave de desempeño (KPIs), tableros de control y alineación presupuestaria.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5">Diseño de indicadores clave de desempeño (KPIs), tableros de control y alineación presupuestaria.</p>
           </div>
-          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-indigo-900/40 text-xs">
-            <span class="font-mono text-[11px] text-slate-400">Estado: Activo</span>
-            <span class="text-indigo-400 font-semibold text-[11px]">En Desarrollo Académico</span>
+          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-indigo-200 dark:border-indigo-900/40 text-xs">
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">Estado: Activo</span>
+            <span class="text-indigo-600 dark:text-indigo-400 font-semibold text-[11px]">En Desarrollo Académico</span>
           </div>
         </div>
 
         <!-- Cert 4: IA para la Educación -->
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-blue-800/60 bg-blue-950/20 glass-card-hover flex flex-col justify-between md:col-span-2 lg:col-span-2">
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-blue-200 dark:border-blue-800/60 bg-blue-50/50 dark:bg-blue-950/20 glass-card-hover flex flex-col justify-between md:col-span-2 lg:col-span-2">
           <div>
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-300 bg-blue-900/60 px-2 py-0.5 rounded border border-blue-700/60 print-badge">Especialización en IA</span>
-                <h4 class="text-sm sm:text-base font-bold text-white">IA para la Educación</h4>
-                <p class="text-xs text-blue-300 font-medium">Circles Learning • En alianza con ChileMass y Caja Los Andes</p>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/60 px-2 py-0.5 rounded border border-blue-300 dark:border-blue-700/60 print-badge">Especialización en IA</span>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">IA para la Educación</h4>
+                <p class="text-xs text-blue-700 dark:text-blue-300 font-medium">Circles Learning • En alianza con ChileMass y Caja Los Andes</p>
               </div>
-              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0 no-print">
+              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0 no-print">
                 <i data-lucide="sparkles" class="w-4 h-4"></i>
               </div>
             </div>
-            <p class="text-xs text-slate-400 mt-2.5">Aplicación de modelos de lenguaje e inteligencia artificial generativa a la optimización curricular y gestión escolar.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5">Aplicación de modelos de lenguaje e inteligencia artificial generativa a la optimización curricular y gestión escolar.</p>
           </div>
-          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-blue-900/40 text-xs">
-            <span class="font-mono text-[11px] text-slate-400">Verificación Digital</span>
-            <a href="https://certificates.getcircles.org/confirm/LGEHIJNF" target="_blank" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-semibold no-print py-1">
+          <div class="mt-3.5 flex items-center justify-between pt-2 border-t border-blue-200 dark:border-blue-900/40 text-xs">
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">Verificación Digital</span>
+            <a href="https://certificates.getcircles.org/confirm/LGEHIJNF" target="_blank" class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-500 font-semibold no-print py-1">
               <span>Verificar en Línea</span> <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
@@ -761,42 +839,42 @@
 
     <!-- Enfoque Estratégico Interactivo -->
     <section id="asistente" class="no-print reveal-on-scroll">
-      <div class="glass-card rounded-3xl p-5 sm:p-8 border border-brand-500/30 bg-gradient-to-b from-slate-900/90 to-surface-950 relative overflow-hidden">
+      <div class="glass-card rounded-3xl p-5 sm:p-8 border border-brand-300 dark:border-brand-500/30 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900/90 dark:to-surface-950 relative overflow-hidden">
         
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 via-brand-500 to-indigo-600 text-white flex items-center justify-center shadow-md shadow-brand-500/20 flex-shrink-0">
             <i data-lucide="compass" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="text-sm sm:text-lg font-bold text-white">Ejes de Trabajo y Enfoque Profesional</h3>
-            <p class="text-[11px] sm:text-xs text-slate-400">Toca cada temática para conocer la experiencia y metodología de trabajo aplicada</p>
+            <h3 class="text-sm sm:text-lg font-bold text-slate-900 dark:text-white">Ejes de Trabajo y Enfoque Profesional</h3>
+            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Toca cada temática para conocer la experiencia y metodología de trabajo aplicada</p>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4" id="faq-buttons">
-          <button onclick="askQuestion(0)" class="faq-btn text-xs p-3 rounded-xl bg-slate-800/80 hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-700/80 text-slate-200 transition-all text-left flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-brand-500/20 text-brand-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">01</span>
+          <button onclick="askQuestion(0)" class="faq-btn text-xs p-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-50 dark:hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-200 dark:border-slate-700/80 text-slate-800 dark:text-slate-200 transition-all text-left flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-brand-500/20 text-brand-600 dark:text-brand-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">01</span>
             <span class="font-medium">Educación Media TP, Liceos Bicentenario y Proyectos</span>
           </button>
           
-          <button onclick="askQuestion(1)" class="faq-btn text-xs p-3 rounded-xl bg-slate-800/80 hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-700/80 text-slate-200 transition-all text-left flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">02</span>
+          <button onclick="askQuestion(1)" class="faq-btn text-xs p-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-50 dark:hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-200 dark:border-slate-700/80 text-slate-800 dark:text-slate-200 transition-all text-left flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">02</span>
             <span class="font-medium">Inteligencia Artificial y Metodologías Lean</span>
           </button>
           
-          <button onclick="askQuestion(2)" class="faq-btn text-xs p-3 rounded-xl bg-slate-800/80 hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-700/80 text-slate-200 transition-all text-left flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">03</span>
+          <button onclick="askQuestion(2)" class="faq-btn text-xs p-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-50 dark:hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-200 dark:border-slate-700/80 text-slate-800 dark:text-slate-200 transition-all text-left flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">03</span>
             <span class="font-medium">Asesoría Técnico-Pedagógica y Trabajo Entre Pares</span>
           </button>
           
-          <button onclick="askQuestion(3)" class="faq-btn text-xs p-3 rounded-xl bg-slate-800/80 hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-700/80 text-slate-200 transition-all text-left flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">04</span>
+          <button onclick="askQuestion(3)" class="faq-btn text-xs p-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-50 dark:hover:bg-brand-950/80 hover:border-brand-500/50 border border-slate-200 dark:border-slate-700/80 text-slate-800 dark:text-slate-200 transition-all text-left flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-600 dark:text-blue-300 flex items-center justify-center font-bold text-[11px] flex-shrink-0">04</span>
             <span class="font-medium">Gestión Curricular, Evaluación (Dec. 67) y PME</span>
           </button>
         </div>
 
-        <div id="faq-answer" class="p-4 sm:p-5 rounded-2xl bg-surface-950/90 border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed min-h-[90px] flex items-center transition-all">
-          <p class="text-slate-400 italic">Selecciona una de las temáticas superiores para desplegar el detalle del enfoque...</p>
+        <div id="faq-answer" class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-surface-950/90 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed min-h-[90px] flex items-center transition-all">
+          <p class="text-slate-500 dark:text-slate-400 italic">Selecciona una de las temáticas superiores para desplegar el detalle del enfoque...</p>
         </div>
       </div>
     </section>
@@ -805,24 +883,24 @@
 
   <!-- Mobile Bottom Dock Navigation (Thumb-friendly for Smartphones) -->
   <aside class="fixed bottom-3 inset-x-3 sm:inset-x-6 z-40 lg:hidden no-print">
-    <div class="glass-card rounded-2xl border border-slate-700/80 px-2 py-2 shadow-2xl flex items-center justify-around text-slate-300 text-[11px] font-semibold backdrop-blur-xl">
-      <a href="#perfil" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-300 active:scale-95 transition-all">
-        <i data-lucide="user" class="w-4 h-4 text-brand-400"></i>
+    <div class="glass-card rounded-2xl border border-slate-300 dark:border-slate-700/80 px-2 py-2 shadow-2xl flex items-center justify-around text-slate-700 dark:text-slate-300 text-[11px] font-semibold backdrop-blur-xl">
+      <a href="#perfil" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-600 dark:hover:text-brand-300 active:scale-95 transition-all">
+        <i data-lucide="user" class="w-4 h-4 text-brand-600 dark:text-brand-400"></i>
         <span>Perfil</span>
       </a>
-      <a href="#habilidades" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-300 active:scale-95 transition-all">
-        <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i>
+      <a href="#habilidades" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-600 dark:hover:text-brand-300 active:scale-95 transition-all">
+        <i data-lucide="layers" class="w-4 h-4 text-indigo-600 dark:text-indigo-400"></i>
         <span>Matriz</span>
       </a>
-      <a href="#experiencia" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-300 active:scale-95 transition-all">
-        <i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i>
+      <a href="#experiencia" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-600 dark:hover:text-brand-300 active:scale-95 transition-all">
+        <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
         <span>Trayectoria</span>
       </a>
-      <a href="#credenciales" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-300 active:scale-95 transition-all">
-        <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-400"></i>
+      <a href="#credenciales" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-600 dark:hover:text-brand-300 active:scale-95 transition-all">
+        <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
         <span>Grados</span>
       </a>
-      <button onclick="openQRModal()" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-300 active:scale-95 transition-all text-brand-300">
+      <button onclick="openQRModal()" class="flex flex-col items-center gap-1 px-2 py-1 rounded-xl hover:text-brand-600 dark:hover:text-brand-300 active:scale-95 transition-all text-brand-600 dark:text-brand-300">
         <i data-lucide="share-2" class="w-4 h-4"></i>
         <span>Compartir</span>
       </button>
@@ -830,22 +908,22 @@
   </aside>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400 relative z-10 no-print">
+  <footer class="border-t border-slate-200 dark:border-slate-800/80 py-8 text-center text-xs text-slate-500 dark:text-slate-400 relative z-10 no-print">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <p class="font-bold text-slate-200">Dionicio Felipe Flores Vilches</p>
-        <p class="text-[11px] text-slate-400 font-mono">Gestión, Liderazgo & Políticas Educativas • Ñuble, Chile</p>
+        <p class="font-bold text-slate-800 dark:text-slate-200">Dionicio Felipe Flores Vilches</p>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Gestión, Liderazgo & Políticas Educativas • Ñuble, Chile</p>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="mailto:saxneal@hotmail.com" class="hover:text-brand-300 transition-colors flex items-center gap-1">
+        <a href="mailto:saxneal@hotmail.com" class="hover:text-brand-600 dark:hover:text-brand-300 transition-colors flex items-center gap-1">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i> saxneal@hotmail.com
         </a>
         <span>•</span>
-        <a href="tel:+56965143133" class="hover:text-brand-300 transition-colors flex items-center gap-1">
+        <a href="tel:+56965143133" class="hover:text-brand-600 dark:hover:text-brand-300 transition-colors flex items-center gap-1">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i> +56 9 6514 3133
         </a>
         <span>•</span>
-        <a href="https://github.com/saxneal-png" target="_blank" class="hover:text-brand-300 transition-colors flex items-center gap-1">
+        <a href="https://github.com/saxneal-png" target="_blank" class="hover:text-brand-600 dark:hover:text-brand-300 transition-colors flex items-center gap-1">
           <i data-lucide="github" class="w-3.5 h-3.5"></i> saxneal-png
         </a>
       </div>
@@ -856,17 +934,17 @@
   <div id="modal-qr" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md modal-backdrop hidden-modal no-print">
     <div class="glass-card max-w-sm w-full rounded-3xl p-6 border border-brand-500/40 text-center relative shadow-2xl space-y-4">
       
-      <button onclick="closeQRModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg">
+      <button onclick="closeQRModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 dark:hover:text-white p-1 rounded-lg">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <div class="w-12 h-12 mx-auto rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center border border-brand-500/30">
+      <div class="w-12 h-12 mx-auto rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center border border-brand-500/30">
         <i data-lucide="qr-code" class="w-6 h-6"></i>
       </div>
 
       <div>
-        <h3 class="text-base font-bold text-white">Compartir CV Ejecutivo</h3>
-        <p class="text-xs text-slate-400 mt-1">Escanea el código QR desde cualquier móvil o copia el enlace directo</p>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white">Compartir CV Ejecutivo</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Escanea el código QR desde cualquier móvil o copia el enlace directo</p>
       </div>
 
       <!-- QR Container -->
@@ -878,8 +956,8 @@
           <span>Copiar Enlace Web</span>
         </button>
         
-        <button onclick="downloadVCard()" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-all active:scale-95">
-          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <button onclick="downloadVCard()" class="w-full py-2 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700 transition-all active:scale-95">
+          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
           <span>Guardar Contacto (.vcf)</span>
         </button>
       </div>
@@ -887,17 +965,42 @@
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast-box" class="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 px-4 py-3 rounded-2xl bg-surface-900/95 border border-brand-500/50 shadow-2xl text-white text-xs font-semibold flex items-center gap-2.5 backdrop-blur-xl">
-    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+  <div id="toast-box" class="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 px-4 py-3 rounded-2xl bg-white/95 dark:bg-surface-900/95 border border-brand-500/50 shadow-2xl text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-2.5 backdrop-blur-xl">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0"></i>
     <span id="toast-msg">Mensaje del sistema</span>
   </div>
 
   <script>
+    // Initialize Theme from localStorage or Default to Dark
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+
+    function toggleTheme() {
+      playTone(650);
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      
+      const metaColor = document.getElementById('meta-theme-color');
+      if (metaColor) {
+        metaColor.setAttribute('content', isDark ? '#050811' : '#f8fafc');
+      }
+      
+      showToast(isDark ? 'Modo Oscuro activado' : 'Modo Claro Corporativo activado');
+      lucide.createIcons();
+    }
+
     // Initialize Lucide Icons & Components
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       initScrollReveal();
       initQRCode();
+      initCounters();
     });
 
     // Spotlight cursor tracking (only for pointer devices)
@@ -906,6 +1009,36 @@
         document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
         document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
       });
+    }
+
+    // Animated Counters for Metrics
+    function initCounters() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(counter => {
+              const target = +counter.getAttribute('data-target');
+              let count = 0;
+              const speed = target / 25;
+              const updateCount = () => {
+                count += speed;
+                if (count < target) {
+                  counter.innerText = Math.ceil(count);
+                  setTimeout(updateCount, 35);
+                } else {
+                  counter.innerText = target;
+                }
+              };
+              updateCount();
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      const statsSection = document.getElementById('stats-counter-section');
+      if (statsSection) observer.observe(statsSection);
     }
 
     // Scroll reveal observer
@@ -1067,16 +1200,30 @@
       showToast('Descargando tarjeta de contacto (.vcf)...');
     }
 
-    // Experience Filtering
+    // Real-time Live Search
+    function liveSearchExperience() {
+      const query = document.getElementById('live-search-input').value.toLowerCase();
+      const cards = document.querySelectorAll('.exp-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Experience Category Filtering
     function filterExperience(category) {
       playTone(480);
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-filter') === category) {
-          btn.classList.remove('bg-slate-800', 'text-slate-300');
+          btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
           btn.classList.add('bg-brand-600', 'text-white');
         } else {
-          btn.classList.add('bg-slate-800', 'text-slate-300');
+          btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
           btn.classList.remove('bg-brand-600', 'text-white');
         }
       });
@@ -1118,10 +1265,10 @@
       
       answerBox.innerHTML = `
         <div class="space-y-1.5">
-          <div class="font-bold text-brand-300 flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i> ${item.q}
+          <div class="font-bold text-brand-600 dark:text-brand-300 flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 dark:text-brand-400"></i> ${item.q}
           </div>
-          <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">${item.a}</p>
+          <p class="text-slate-700 dark:text-slate-200 text-xs sm:text-sm leading-relaxed">${item.a}</p>
         </div>
       `;
       lucide.createIcons();
@@ -1492,7 +1639,9 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(12, 141, 233, 0.28)';
+        ctx.fillStyle = document.documentElement.classList.contains('dark') 
+          ? 'rgba(12, 141, 233, 0.28)' 
+          : 'rgba(3, 88, 161, 0.18)';
         ctx.fill();
       }
     }
@@ -1503,6 +1652,7 @@
 
     function animateParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const isDark = document.documentElement.classList.contains('dark');
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
@@ -1513,7 +1663,9 @@
           const maxDist = isMobileDevice ? 85 : 115;
           if (dist < maxDist) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.14 * (1 - dist / maxDist)})`;
+            ctx.strokeStyle = isDark 
+              ? `rgba(99, 102, 241, ${0.14 * (1 - dist / maxDist)})`
+              : `rgba(3, 88, 161, ${0.12 * (1 - dist / maxDist)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
